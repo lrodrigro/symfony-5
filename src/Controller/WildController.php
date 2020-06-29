@@ -24,9 +24,7 @@ class WildController extends AbstractController
         if (empty($slug)) {
             $slugOut = "Aucune série sélectionnée, veuillez choisir une série";
         } 
-
-        //$slugConver = str_replace('-', '', $slug); 
-        
+       
         if (!ctype_lower(str_replace('-', '', $slug)) || strpos($slug, '_')) {
             throw $this->createNotFoundException();
         } else {
